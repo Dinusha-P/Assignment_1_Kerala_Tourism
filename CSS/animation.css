@@ -1,0 +1,12 @@
+h2{
+    animation-name: animation1;
+    animation-duration: 2s;
+    animation-iteration-count: 2;
+}
+  @keyframes animation1 {
+    from {font-weight: lighter;}
+    to {font-weight: bold;}
+  }
+
+
+  
