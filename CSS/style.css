@@ -3,6 +3,10 @@ body{
     background-image:cover;
 }
 
+#form1{
+    background-image: url("../images/signUp3.jpg");
+    background-size:cover;
+}
 .headline{
     margin-left: 600px;
     padding-top: 100px;

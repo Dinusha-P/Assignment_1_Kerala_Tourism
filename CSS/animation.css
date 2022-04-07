@@ -9,4 +9,49 @@ h2{
   }
 
 
-  
+  footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+  }
+  body{
+    background-image: url("../images/signUp2.jpg");
+    background-image:cover;
+}
+#form1{
+  background-image: url("../images/bg.jpg");
+  background-size:cover;
+  padding: 30px;
+}
+.displayBadge{
+  margin-top: 1px; 
+  display: none; 
+  text-align :center;
+}
+
+#progressbar {
+  margin-top: 3%; 
+  background-color: rgb(216, 179, 179);
+  border-radius: 4px;
+  /* (height of inner div) / 2 + padding */
+  padding: 2px;
+  display: none; 
+}
+
+#progress {
+  background-color: orange;
+  width: 0%;
+  /* Adjust with JavaScript */
+  height: 3px;
+  border-radius: 5px;
+}
+#pwMatch{
+    margin-top: 1px; 
+  display: none; 
+  text-align :center;
+}
+#emailValid{
+  margin-top: 1px; 
+display: none; 
+text-align :center;
+}
