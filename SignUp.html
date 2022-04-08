@@ -42,7 +42,7 @@
       </nav>
       
       <!-- SigUp -->
-      <form class="container mt-5 mb-5" action="login.html"  onsubmit="return validate();">
+      <form class="container mt-5 mb-5" action="login.html"  onsubmit="return ((validateName()&validateEmail()&validatePhone()&validatePassword()&validateCnfPw())==1);">
         <div class="row">
           <div class="col-2 col-md-3"></div>
           <div class="col-8 col-md-6">
@@ -52,14 +52,15 @@
                         <h2 class="text-success text-center">Create an account</h2>
                         <br>
                          <label for="name">Your Name</label>
-                         <input type="text" class="form-control" id="fname" aria-describedby="nameHelp" placeholder="First name">
-                         <label for="NameError" id="NameError"></label>
+                         <input type="text" class="form-control" id="fname"  placeholder="First name">
+                         <span id="NameError" class="badge displayBadge" ></span>
                          <br/>
                        </div>
                        <div class="form-group">
                          <label for="email">Email address</label>
-                         <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                         <span id="emailValid" style="display: none;" class="badge displayBadge" ></span>
+                         <input type="text" class="form-control" id="email"  placeholder="Enter email">
+                         <span id="emailValid"  class="badge displayBadge" ></span>
+                         <br> 
                        </div>
                        <div class="form-group">
                         <label class="form-control-label">Phone Number</label>
@@ -69,28 +70,35 @@
                         </div>
                         <input type="phone" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone number">
                       </div>
-                        <small id="phoneHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+                      <span id="phoneValid" class="badge displayBadge" ></span>
                         <br/>
                       </div>
                        <div class="form-group">
                          <label for="exampleInputPassword1">Password</label>
-                         <input type="password" class="form-control passwordInput" id="PassEntry" placeholder="Enter Password">
-                         <input type="checkbox" style="align-content:right;"  onclick="ShowPassword()">Show Password
+                         <input type="password" class="form-control passwordInput mb-2" id="PassEntry" placeholder="Enter Password">
+                         <input type="checkbox" onclick="ShowPassword()">Show Password
                          <div id="progressbar">
                           <div id="progress"></div>
                         </div>
                         <span id="StrengthDisp" class="badge displayBadge"></span>
                         <br>
                        </div>
-                       <div class="form-group mt-2"> 
+                       <div id="message">
+                        <h6 style="font-size: 12px;">Password must contain the following:</h6>
+                        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="invalid">A <b>number</b></p>
+                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                      </div>
+                       <div class="form-group mt-3"> 
                         <label for="retypePassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="retype" placeholder="Re-enter Password">
+                        <input type="password" class="form-control mb-2" id="retype" placeholder="Re-enter Password">
                         <input type="checkbox" onclick="ShowPassword1()">Show Password
-                        <span id="pwMatch" style="display: none;" class="badge displayBadge" ></span>
+                        <span id="pwMatch" class="badge displayBadge" ></span>
                       </div>
                        <div class="form-check mt-1">
-                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                         <label class="form-check-label" for="exampleCheck1">I read and accept <a class="text-decoration-none "href="#">Terms & Conditions</a></label>
+                         <input type="checkbox"  id="exampleCheck1">
+                         <label class="form-check-label mt-2" for="exampleCheck1">I read and accept <a class="text-decoration-none "href="#">Terms & Conditions</a></label>
                          <br/>
                          <br/>
                        </div>

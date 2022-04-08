@@ -24,7 +24,7 @@ h2{
   padding: 30px;
 }
 .displayBadge{
-  margin-top: 1px; 
+  margin-top: 1%; 
   display: none; 
   text-align :center;
 }
@@ -47,11 +47,51 @@ h2{
 }
 #pwMatch{
     margin-top: 1px; 
-  display: none; 
   text-align :center;
 }
 #emailValid{
-  margin-top: 1px; 
-display: none; 
+  margin-top: 1px;  
 text-align :center;
+}
+#NameError{
+  margin-top: 1px; 
+  text-align :center;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 10px;
+  margin-top: 2px;
+  margin-bottom:5px;
+}
+
+#message p {
+  padding: 2px 5px;
+  font-size: 10px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -10px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: rgb(102, 95, 95);
+}
+
+.invalid:before {
+  position: relative;
+  left: -10px;
+  content: "";
 }
