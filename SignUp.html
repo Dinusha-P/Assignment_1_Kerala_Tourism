@@ -42,7 +42,7 @@
       </nav>
       
       <!-- SigUp -->
-      <form class="container mt-5 mb-5" action="login.html"  onsubmit="return ((validateName()&validateEmail()&validatePhone()&validatePassword()&validateCnfPw()&validateEmail2()&validatePhone1()&validatePassword1()&validateCnfPw2())==1);">
+      <form class="container mt-5 mb-5" action="login.html"  onsubmit="return validate()">
         <div class="row">
           <div class="col-2 col-md-3"></div>
           <div class="col-8 col-md-6">
@@ -98,9 +98,9 @@
                         <span id="pwMatch" class="badge displayBadge" ></span>
                       </div>
                        <div class="form-check mt-1">
-                         <input type="checkbox" id="Check">
+                         <input type="checkbox" id="check">
                          <label class="form-check-label mt-2" for="Check">I read and accept <a class="text-decoration-none "href="#">Terms & Conditions</a></label>
-                         <span id="check" class="badge displayBadge" ></span>
+                         <span id="Check" class="badge displayBadge" ></span>
                          <br/>
                          <br/>
                        </div>

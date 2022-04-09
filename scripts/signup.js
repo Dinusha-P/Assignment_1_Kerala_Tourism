@@ -10,13 +10,31 @@ let strengthBadge = document.getElementById('StrengthDisp');
 let retype = document.getElementById('retype');
 let pwMatch = document.getElementById('pwMatch');
 let regexp= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+)\.([a-z]{2,3})(.[a-z]{2,3})?$/;
-let PhoneFormat = new RegExp('([0-9]{10})|([0-9]{3}[\.][0-9]{3}[\.][0-9]{4})|([0-9]{3}[\-]?[0-9]{3}[\-][0-9]{4})|([0-9]{3}[ ][0-9]{3}[ ][0-9]{4})');
+let PhoneFormat = new RegExp('^([0-9]{10})|([0-9]{3}[\.][0-9]{3}[\.][0-9]{4})|([0-9]{3}[\-]?[0-9]{3}[\-][0-9]{4})|([0-9]{3}[ ][0-9]{3}[ ][0-9]{4})$');
 let phonelHelp=document.getElementById('phonelHelp');
 // The strong and weak password Regex pattern checker
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.{8,}))');
 let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
 let check=document.getElementById('check');
 
+function validate()
+{
+    if((validateName()&validateEmail()&validatePhone()&validatePassword()&validateCnfPw()&validateEmail2()&validatePhone1()&validatePassword1()&validateCnfPw2())==1)
+    {
+        
+        return validateCheckbox();
+    }
+
+    return false;
+}
+function validateCheckbox(){
+    if(check.checked==false)
+    {
+        alert("Please indicate that you have read and agree to Terms and Conditions");
+        return false;
+    }
+    return true;
+  }
 function validateName(){
     if(fname.value.trim()==""){
         NameError.textContent="Name can not be empty!";
