@@ -42,7 +42,7 @@
       </nav>
       
       <!-- SigUp -->
-      <form class="container mt-5 mb-5" action="login.html"  onsubmit="return ((validateName()&validateEmail()&validatePhone()&validatePassword()&validateCnfPw())==1);">
+      <form class="container mt-5 mb-5" action="login.html"  onsubmit="return ((validateName()&validateEmail()&validatePhone()&validatePassword()&validateCnfPw()&validateEmail2()&validatePhone1()&validatePassword1()&validateCnfPw2())==1);">
         <div class="row">
           <div class="col-2 col-md-3"></div>
           <div class="col-8 col-md-6">
@@ -70,6 +70,7 @@
                         </div>
                         <input type="phone" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone number">
                       </div>
+                      <small id="phonelHelp" class="form-text text-muted" style="display: none;">Phone number must be in following format: 'xxxxxxxxx' or 'xxx-xxx-xxx' or 'xxx.xxx.xxx' or 'xxx xxx xxx'</small>
                       <span id="phoneValid" class="badge displayBadge" ></span>
                         <br/>
                       </div>
@@ -97,8 +98,9 @@
                         <span id="pwMatch" class="badge displayBadge" ></span>
                       </div>
                        <div class="form-check mt-1">
-                         <input type="checkbox"  id="exampleCheck1">
-                         <label class="form-check-label mt-2" for="exampleCheck1">I read and accept <a class="text-decoration-none "href="#">Terms & Conditions</a></label>
+                         <input type="checkbox" id="Check">
+                         <label class="form-check-label mt-2" for="Check">I read and accept <a class="text-decoration-none "href="#">Terms & Conditions</a></label>
+                         <span id="check" class="badge displayBadge" ></span>
                          <br/>
                          <br/>
                        </div>

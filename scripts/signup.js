@@ -1,7 +1,6 @@
     // traversing the DOM and getting the input and span using their IDs
 let fname=document.getElementById("fname");
 let email=document.getElementById("email");
-// let error=document.getElementById("error");
 let NameError=document.getElementById("NameError");
 let password = document.getElementById('PassEntry');
 let emailValid = document.getElementById('emailValid');
@@ -11,6 +10,12 @@ let strengthBadge = document.getElementById('StrengthDisp');
 let retype = document.getElementById('retype');
 let pwMatch = document.getElementById('pwMatch');
 let regexp= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+)\.([a-z]{2,3})(.[a-z]{2,3})?$/;
+let PhoneFormat = new RegExp('([0-9]{10})|([0-9]{3}[\.][0-9]{3}[\.][0-9]{4})|([0-9]{3}[\-]?[0-9]{3}[\-][0-9]{4})|([0-9]{3}[ ][0-9]{3}[ ][0-9]{4})');
+let phonelHelp=document.getElementById('phonelHelp');
+// The strong and weak password Regex pattern checker
+let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.{8,}))');
+let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
+let check=document.getElementById('check');
 
 function validateName(){
     if(fname.value.trim()==""){
@@ -30,6 +35,15 @@ function validateEmail(){
     }
     return true;
   }
+
+function validateEmail2(){
+    if(regexp.test(email.value))
+    {
+        return true;
+    }
+    return false;
+  }
+
 function validatePhone(){
    if(phone.value.trim()==""){
         phoneValid.textContent="Phone number can not be empty!";
@@ -39,6 +53,13 @@ function validatePhone(){
     }
     return true;
 }  
+function validatePhone1(){
+    if(PhoneFormat.test(phone.value))
+    {
+        return true;
+    }
+    return false;
+}
 function validatePassword(){
     if(password.value.trim()==""){
         strengthBadge.textContent="Please enter a password!";
@@ -46,6 +67,15 @@ function validatePassword(){
         strengthBadge.style.display= 'block'
         return false;
     }
+    return true;
+  }
+  function validatePassword1(){
+    if(password.value.trim()!="" && !strongPassword.test(password.value))
+    {
+        strengthBadge.textContent="Password strength is not strong enough!";
+        return false;
+    }
+
     return true;
   }
   function validateCnfPw(){
@@ -57,7 +87,13 @@ function validatePassword(){
     }
     return true;
   }    
-  
+  function validateCnfPw2(){
+    if(password.value==retype.value)
+    {
+        return true;
+    }
+    return false;
+}
 
 //email validation
     // timeout before a callback is called
@@ -120,11 +156,6 @@ function ShowPassword() {
 
     let pwBar =document.getElementById('progress');
     let strengthBadge1 = document.getElementById('progressbar');
-
-    // The strong and weak password Regex pattern checker
-
-    let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
-    let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.{8,}))');
   
     function StrengthChecker(PasswordParameter){
         // We then change the badge's color and text based on the password strength
@@ -267,15 +298,16 @@ password.onfocus = function() {
 
     let timeout3;
 
-    let PhoneFormat = new RegExp('([0-9]{10})|([0-9]{3}[\.][0-9]{3}[\.][0-9]{4})|([0-9]{3}[\-]?[0-9]{3}[\-][0-9]{4})|([0-9]{3}[ ][0-9]{3}[ ][0-9]{4})');
     function PhoneChecker(PhoneParameter){
         if(!PhoneFormat.test(PhoneParameter)) {
             phoneValid.style.color = 'red';
             phoneValid.textContent = 'Please enter a valid phone number';
+            phonelHelp.style.display= 'block';
         }
         else
         {
             phoneValid.textContent = '';
+            phonelHelp.style.display= 'none';
         }
     }
 
@@ -294,8 +326,10 @@ password.onfocus = function() {
 
             if(phone.value.length !== 0){
                 phoneValid.style.display != 'block'
+                phonelHelp.style.display != 'block'
             } else{
                 phoneValid.style.display = 'none'
+                phonelHelp.style.display = 'none'
             }
         });
 
