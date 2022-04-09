@@ -1,4 +1,5 @@
-    // traversing the DOM and getting the input and span using their IDs
+ const form = document.getElementsByTagName('form')[1];
+ // traversing the DOM and getting the input and span using their IDs
 let fname=document.getElementById("fname");
 let email=document.getElementById("email");
 let NameError=document.getElementById("NameError");
@@ -16,6 +17,14 @@ let phonelHelp=document.getElementById('phonelHelp');
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.{8,}))');
 let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
 let check=document.getElementById('check');
+
+form.addEventListener('submit', function (event) {
+    // if all fields are valid, we let the form submit
+    if (!validate()) {
+        // Then we prevent the form from being sent by canceling the event
+        event.preventDefault();
+    }
+});
 
 function validate()
 {
@@ -297,7 +306,7 @@ password.onfocus = function() {
         pwMatch.style.display= 'block'
         clearTimeout(timeout1);
 
-        //We then call the StrengChecker function as a callback then pass the typed password to it
+        //We then call the PwChecker function as a callback then pass the typed password to it
 
         timeout1 = setTimeout(() => PwChecker(retype.value), 500);
 
@@ -370,7 +379,7 @@ password.onfocus = function() {
             NameError.style.display= 'block'
             clearTimeout(timeout3);
 
-            //We then call the phoneChecker function as a callback then pass the typed phone number to it
+            //We then call the NameFun function as a callback then pass the typed name to it
 
             timeout4 = setTimeout(() => nameFun(phone.value), 500);
 

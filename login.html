@@ -61,14 +61,23 @@
                   <input type="password" class="form-control passwordInput mb-2" id="PassEntry" placeholder="Enter Password">
                   <input type="checkbox" onclick="ShowPassword()">Show Password
                   <span id="StrengthDisp" class="badge displayBadge"></span>
+                  <br>
+                  <div id="message">
+                    <h6 style="font-size: 12px;">Password must contain the following:</h6>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                  </div>
                  </div>
                  <div class="form-check">
-                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                   <br>
+                   <input type="checkbox" class="form-check-input">
                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
                    <br/>
                    <br/>
                  </div>
-                 <button type="submit" class="btn btn-success">Submit</button>
+                 <button type="submit" class="btn btn-success">LOGIN</button>
               </div>
               <div class="col"></div>
             </div>
