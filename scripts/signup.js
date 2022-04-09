@@ -92,8 +92,12 @@ function validatePassword(){
     {
         return true;
     }
+    pwMatch.textContent="Please enter same password";
+    pwMatch.style.color="red";
+    pwMatch.style.display= 'block';
     return false;
 }
+
 
 //email validation
     // timeout before a callback is called
@@ -186,11 +190,7 @@ function ShowPassword() {
 password.onfocus = function() {
     document.getElementById("message").style.display = "block";
   }
-  
-  // When the user clicks outside of the password field, hide the message box
-  password.onblur = function() {
-    document.getElementById("message").style.display = "none";
-  }
+
   
   // When the user starts to type something inside the password field
   password.onkeyup = function() {
