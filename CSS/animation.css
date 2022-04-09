@@ -16,7 +16,7 @@ h2{
   }
   body{
     background-image: url("../images/signUp2.jpg");
-    background-image:cover;
+    background-size: cover;
 }
 #form1{
   background-image: url("../images/bg.jpg");

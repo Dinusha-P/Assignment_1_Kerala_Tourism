@@ -10,7 +10,7 @@ let strengthBadge = document.getElementById('StrengthDisp');
 let retype = document.getElementById('retype');
 let pwMatch = document.getElementById('pwMatch');
 let regexp= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+)\.([a-z]{2,3})(.[a-z]{2,3})?$/;
-let PhoneFormat = new RegExp('^([0-9]{10})|([0-9]{3}[\.][0-9]{3}[\.][0-9]{4})|([0-9]{3}[\-]?[0-9]{3}[\-][0-9]{4})|([0-9]{3}[ ][0-9]{3}[ ][0-9]{4})$');
+let PhoneFormat = new RegExp('^([0-9]{10}$)|([0-9]{3}[\.][0-9]{3}[\.][0-9]{4}$)|([0-9]{3}[\-]?[0-9]{3}[\-][0-9]{4}$)|([0-9]{3}[ ][0-9]{3}[ ][0-9]{4})$');
 let phonelHelp=document.getElementById('phonelHelp');
 // The strong and weak password Regex pattern checker
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.{8,}))');
@@ -36,7 +36,7 @@ function validateCheckbox(){
     return true;
   }
 function validateName(){
-    if(fname.value.trim()==""){
+    if(fname.value.trim()===""){
         NameError.textContent="Name can not be empty!";
         NameError.style.color="red";
         NameError.style.display= 'block';
@@ -45,7 +45,7 @@ function validateName(){
     return true;
 }
 function validateEmail(){
-    if(email.value.trim()==""){
+    if(email.value.trim()===""){
         emailValid.textContent="email can not be empty!";
         emailValid.style.color="red";
         emailValid.style.display= 'block';
@@ -63,7 +63,7 @@ function validateEmail2(){
   }
 
 function validatePhone(){
-   if(phone.value.trim()==""){
+   if(phone.value.trim()===""){
         phoneValid.textContent="Phone number can not be empty!";
         phoneValid.style.color="red";
         phoneValid.style.display= 'block'
@@ -79,7 +79,7 @@ function validatePhone1(){
     return false;
 }
 function validatePassword(){
-    if(password.value.trim()==""){
+    if(password.value.trim()===""){
         strengthBadge.textContent="Please enter a password!";
         strengthBadge.style.color="red";
         strengthBadge.style.display= 'block'

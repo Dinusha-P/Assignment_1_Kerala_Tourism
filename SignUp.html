@@ -44,8 +44,8 @@
       <!-- SigUp -->
       <form class="container mt-5 mb-5" action="login.html"  onsubmit="return validate()">
         <div class="row">
-          <div class="col-2 col-md-3"></div>
-          <div class="col-8 col-md-6">
+          <div class="col-1 col-md-3"></div>
+          <div class="col-10 col-md-6">
             <section class="card border-success bg-light" id="form1" >
               <div class="card-body d-flex and flex-column">
                        <div class="form-group">
@@ -70,7 +70,7 @@
                         </div>
                         <input type="phone" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone number">
                       </div>
-                      <small id="phonelHelp" class="form-text text-muted" style="display: none;">Phone number must be in following format: 'xxxxxxxxx' or 'xxx-xxx-xxx' or 'xxx.xxx.xxx' or 'xxx xxx xxx'</small>
+                      <small id="phonelHelp" class="form-text text-muted" style="display: none;">Phone number should contain 10 numbers only and must be in following format: 'xxxxxxxxx' or 'xxx-xxx-xxx' or 'xxx.xxx.xxx' or 'xxx xxx xxx'</small>
                       <span id="phoneValid" class="badge displayBadge" ></span>
                         <br/>
                       </div>
@@ -97,10 +97,9 @@
                         <input type="checkbox" onclick="ShowPassword1()">Show Password
                         <span id="pwMatch" class="badge displayBadge" ></span>
                       </div>
-                       <div class="form-check mt-1">
-                         <input type="checkbox" id="check">
-                         <label class="form-check-label mt-2" for="Check">I read and accept <a class="text-decoration-none "href="#">Terms & Conditions</a></label>
-                         <span id="Check" class="badge displayBadge" ></span>
+                       <div class="form-check mt-1 ">
+                         <input type="checkbox" class="form-check-input" id="check">
+                         <label class="form-check-label" for="Check">I read and accept <a class="text-decoration-none "href="#">Terms & Conditions</a></label>
                          <br/>
                          <br/>
                        </div>
