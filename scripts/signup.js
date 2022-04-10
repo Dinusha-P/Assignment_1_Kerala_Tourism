@@ -14,6 +14,8 @@ let regexp= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+)\.([a-z]{2,3})(.[a-z]{2,3})?$/;
 let PhoneFormat = new RegExp('^([0-9]{10}$)|([0-9]{3}[\.][0-9]{3}[\.][0-9]{4}$)|([0-9]{3}[\-]?[0-9]{3}[\-][0-9]{4}$)|([0-9]{3}[ ][0-9]{3}[ ][0-9]{4})$');
 let phonelHelp=document.getElementById('phonelHelp');
 // The strong and weak password Regex pattern checker
+// Medium: If the password is at least six characters long and meets all the other requirements,
+//  or has no digit but meets the rest of the requirements.
 let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.{8,}))');
 let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
 let check=document.getElementById('check');
